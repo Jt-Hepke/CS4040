@@ -2,6 +2,11 @@
 #include <random>
 #include <cassert>
 #include <fstream>
+#include <algorithm>
+#include <chrono>
+#include <utility>
+#include <vector>
+
 
 using namespace std;
 
@@ -91,7 +96,7 @@ void PrintVector(const vector<int>& A) {
     cout << endl;
 }
 
-void Test_InsertionSort(vector<int> A) { //Passing copy
+void Test_Me_InsertionSort(vector<int> A) { //Passing copy
     vector<int> expected = A;
     sort(expected.begin(), expected.end()); // llibrary sort, for check
 
@@ -101,7 +106,7 @@ void Test_InsertionSort(vector<int> A) { //Passing copy
     assert(A == expected);
 }
 
-void Test_QuickSort(vector<int> A) { //Passing copy
+void Test_Me_QuickSort(vector<int> A) { //Passing copy
     vector<int> expected = A;
     sort(expected.begin(), expected.end());
 
@@ -111,7 +116,7 @@ void Test_QuickSort(vector<int> A) { //Passing copy
     assert(A == expected);
 }
 
-void Test_CountSort(vector<int> A) { //Passing Copy
+void Test_Me_CountingSort(vector<int> A) { //Passing Copy
     vector<int> expected = A;
     sort(expected.begin(), expected.end());
 
@@ -213,9 +218,9 @@ void RunExperiment(int n, int k, ofstream& out) {
 int main() {
    //Testing Samples
     vector<int> sample = {5, 2,9, 1, 5, 6, 0, 2};
-    Test_InsertionSort(sample); //Call passing test
-    Test_QuickSort(sample); //Call
-    Test_CountSort(sample); //Call
+    Test_Me_InsertionSort(sample); //Call passing test
+    Test_Me_QuickSort(sample); //Call
+    Test_Me_CountingSort(sample); //Call
     Test_CountSort_Stability(); //Call
     cout<<"All test passed" << endl;
 

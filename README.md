@@ -14,6 +14,7 @@ Building: g++ -O2 -Wall algorithms.cc
 Run: ./a.out
 See plot: python3 plot.py
 
-Make sure matplotlib is installed and ./a.out makes you results.csv file.
+Make sure panda and matplotlib is install:
+python3 -m pip install pandas matplotlib
 
 My main function runs the experiment tests and those will show with a.out so make sure to look for those.
